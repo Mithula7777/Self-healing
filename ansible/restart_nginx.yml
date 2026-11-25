@@ -1,0 +1,10 @@
+---
+- name: Restart NGINX when required
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Ensure NGINX is running
+      ansible.builtin.service:
+        name: nginx
+        state: restarted

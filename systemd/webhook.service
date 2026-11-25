@@ -1,0 +1,12 @@
+[Unit]
+Description=Alertmanager Webhook Receiver
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/self-healing/webhook
+ExecStart=/usr/bin/python3 /opt/self-healing/webhook/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
